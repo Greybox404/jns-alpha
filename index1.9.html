@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JNS-ALPHA GROUP</title>
+  <style>
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    a {
+      color: #1a73e8;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #155abf;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a73e8;
+      letter-spacing: 1px;
+    }
+    .navbar-menu {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+    .navbar-menu li {
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .navbar-menu li a {
+      padding: 0.5rem 0;
+      display: inline-block;
+    }
+    .navbar-menu li a.active {
+      border-bottom: 3px solid #1a73e8;
+      font-weight: 700;
+      color: #1a73e8;
+    }
+
+    /* Container for sections */
+    .container {
+      max-width: 900px;
+      margin: 2rem auto 4rem;
+      background: white;
+      padding: 2.5rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Hero / Home */
+    #home {
+      text-align: center;
+      padding: 5rem 2rem 4rem;
+      background: linear-gradient(135deg, #1a73e8, #155abf);
+      color: white;
+      border-radius: 0 0 80% 80% / 20% 20% 80% 80%;
+      margin-bottom: 4rem;
+    }
+    #home h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      letter-spacing: 1.2px;
+    }
+    #home p {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    /* Section headings */
+    h2.section-title {
+      color: #1a73e8;
+      font-size: 2rem;
+      border-bottom: 3px solid #1a73e8;
+      padding-bottom: 8px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Technologies Section */
+    #technologies ul {
+      list-style-type: square;
+      padding-left: 20px;
+      font-size: 1.1rem;
+    }
+
+    /* Services Section */
+    #services .service-card {
+      background: #f5f7ff;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(26, 115, 232, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    #services .service-card:hover {
+      box-shadow: 0 8px 30px rgba(26, 115, 232, 0.25);
+    }
+    #services .service-card h3 {
+      color: #1a73e8;
+      margin-bottom: 8px;
+    }
+    #services .service-card p {
+      color: #444;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* About Section (reused styling) */
+    blockquote {
+      background: #e8f0fe;
+      border-left: 6px solid #1a73e8;
+      margin: 20px 0;
+      padding: 15px 20px;
+      font-style: italic;
+      color: #1a3c91;
+      border-radius: 6px;
+    }
+    ul.values, ul.principles {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1rem;
+    }
+    ul.values li, ul.principles li {
+      padding-left: 30px;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    ul.values li::before, ul.principles li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: #1a73e8;
+      font-size: 1.4rem;
+      line-height: 1;
+      top: 2px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .container {
+        margin: 1rem;
+        padding: 2rem;
+      }
+      #home h1 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="navbar">
+      <div class="navbar-brand">JNS-ALPHA GROUP</div>
+      <ul class="navbar-menu">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home">
+    <h1>Welcome to JNS-ALPHA GROUP</h1>
+    <p>Empowering South Africa through technology, innovation, and social responsibility.</p>
+  </section>
+
+  <!-- Technologies Section -->
+  <section id="technologies" class="container">
+    <h2 class="section-title">Technologies</h2>
+    <p>We specialize in cutting-edge technologies designed to bring real-world solutions to life:</p>
+    <ul>
+      <li><strong>eLearning Platforms:</strong> StudyCool - Revolutionizing education accessibility.</li>
+      <li><strong>Blockchain Solutions:</strong> TraceChain - Ensuring food safety and transparency.</li>
+      <li><strong>Technical Support:</strong> Comprehensive services for businesses and individuals.</li>
+      <li><strong>Web & Software Development:</strong> Building tailored applications for diverse needs.</li>
+    </ul>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="container">
+    <h2 class="section-title">Services</h2>
+    <div class="service-card">
+      <h3>Web Development</h3>
+      <p>Custom websites and web applications tailored to your business goals, designed with the latest technologies.</p>
+    </div>
+    <div class="service-card">
+      <h3>Software Development</h3>
+      <p>Robust and scalable software solutions that enhance productivity and drive innovation.</p>
+    </div>
+    <div class="service-card">
+      <h3>Desktop Technician Services</h3>
+      <p>Reliable hardware setup, troubleshooting, and maintenance services to keep your systems running smoothly.</p>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="container">
+    <h2 class="section-title">🌍 About Us</h2>
+
+    <h3>Our Story</h3>
+    <p>Founded in <strong>April 2024</strong>, JNS-ALPHA GROUP is a young and dynamic company with a bold vision. In today’s digital age, access to technology is more important than ever. We believe that technology has the power to transform lives and create a better future for <strong>South Africa</strong> and the entire <strong>African continent</strong>.</p>
+    <p>Our mission is to harness the potential of technology to address critical challenges, empower communities, and promote sustainable development. We are driven by a passion for innovation and a deep commitment to <strong>social responsibility</strong>.</p>
+    <blockquote>
+      Our eLearning platform, <strong>StudyCool</strong>, reflects our dedication to education and equality.<br />
+      <strong>TraceChain</strong>, our blockchain-based food traceability solution, demonstrates our commitment to food safety and consumer protection.
+    </blockquote>
+    <p>Together, these projects represent our vision for a <strong>South Africa where technology uplifts lives</strong> and creates a more equitable and prosperous society.</p>
+
+    <h3>Our Values</h3>
+    <ul class="values">
+      <li><strong>Innovation:</strong> Continuously pushing boundaries to create impactful solutions.</li>
+      <li><strong>Integrity:</strong> Conducting our business with honesty and transparency.</li>
+      <li><strong>Community:</strong> Empowering local talent and fostering inclusive growth.</li>
+      <li><strong>Excellence:</strong> Delivering quality and reliability in everything we do.</li>
+      <li><strong>Responsibility:</strong> Building sustainable solutions that benefit future generations.</li>
+    </ul>
+
+    <h3>Meet The Team</h3>
+    <p>Our team comprises passionate students and young professionals who combine their skills to make a real difference:</p>
+    <ul class="values">
+      <li>Samkelo Jonas - Web Developer (PHP)</li>
+      <li>Shandre Van Der Merwe - Database Manager and Networks</li>
+      <li>Mduduzi Amos Mthimunye - Web Developer (JavaScript)</li>
+      <li>Pulane Thandanani Nene - Application Developer</li>
+      <li>Ntobeko Makhehla Nxumalo - Database Administrator</li>
+      <li>Faadil Ahmed - Tester</li>
+    </ul>
+  </section>
+
+</body>
+</html>
