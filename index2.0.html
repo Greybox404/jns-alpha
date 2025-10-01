@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>JNS-ALPHA GROUP | Innovating the Future</title>
+    <!--<link rel="stylesheet" href="stylesheet/styles.css"> -->
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+
+    /* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+header {
+    background: #222;
+    color: #fff;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .logo img {
+    width: 150px;
+    height: auto;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+header ul li a:hover {
+    background: #555;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 80vh;
+    color: #fff;
+    position: relative;
+    padding: 20px;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero .cta-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #007bff;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.hero .cta-buttons a:hover {
+    background: #0056b3;
+}
+
+/* Section Styles */
+.section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+.section p {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #666;
+}
+
+.card-grid, .service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card, .service-card {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.card:hover, .service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(10, 9, 9, 0.2);
+}
+
+.card img, .service-card img {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.card h3, .service-card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.testimonial {
+    max-width: 500px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.testimonial h4 {
+    color: #007bff;
+}
+
+/* Contact Section */
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.contact-wrapper form {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-wrapper form input, 
+.contact-wrapper form textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-wrapper form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact-wrapper form button:hover {
+    background: #0056b3;
+}
+
+.map iframe {
+    flex: 1;
+    width: 100%;
+    height: 300px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .social-links {
+    margin-top: 10px;
+}
+
+footer .social-links a img {
+    width: 30px;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+}
+
+footer .social-links a img:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .card-grid, .service-grid {
+        flex-direction: column;
+    }
+
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
+
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.jpg" alt="JNS-ALPHA GROUP Logo">
+            </div>
+            <ul class="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="technologies.html">Technologies</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero" style="background: url('hero-bg.jpg') center/cover no-repeat;">
+        <div class="overlay">
+            <h1>Innovating the Future</h1>
+            <p>Empowering businesses and communities through cutting-edge technology.</p>
+            <div class="cta-buttons">
+                <a href="#services" class="cta">Our Services</a>
+                <a href="#contact" class="cta">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="section">
+        <h2>Why Choose JNS-ALPHA GROUP?</h2>
+        <div class="features">
+            <div class="feature">
+                <img src="innovation-icon.svg" alt="Innovation">
+                <h3>Innovative Solutions</h3>
+                <p>We develop cutting-edge technologies to tackle modern challenges.</p>
+            </div>
+            <div class="feature">
+                <img src="client-icon.svg" alt="Client Focus">
+                <h3>Client-Centric Approach</h3>
+                <p>Our solutions are customized to meet your unique business needs.</p>
+            </div>
+            <div class="feature">
+                <img src="expertise-icon.svg" alt="Expertise">
+                <h3>Proven Expertise</h3>
+                <p>Decades of experience delivering impactful, results-driven projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Technologies -->
+    <section id="technologies" class="section">
+        <h2>Our Technologies</h2>
+        <div class="card-grid">
+            <div class="card">
+                <img src="studyCool-icon.jpg" alt="StudyCool">
+                <h3>StudyCool</h3>
+                <p>Interactive eLearning platform designed for accessible and engaging learning.</p>
+                <a href="studyCool.html" class="cta">Learn More</a>
+            </div>
+            <div class="card">
+                <img src="tracechain-icon.jpg" alt="TraceChain">
+                <h3>TraceChain</h3>
+                <p>Blockchain-powered platform ensuring trust and transparency in traceability.</p>
+                <a href="tracechain.html" class="cta">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Services -->
+    <section id="services" class="section">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="web-dev-icon.svg" alt="Web Development">
+                <h3>Web Development</h3>
+                <p>Custom, responsive websites tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <img src="software-dev-icon.svg" alt="Software Development">
+                <h3>Software Development</h3>
+                <p>Scalable software applications optimized for growth.</p>
+            </div>
+            <div class="service-card">
+                <img src="tech-support-icon.svg" alt="Tech Support">
+                <h3>Desktop Technician Services</h3>
+                <p>Reliable IT support for infrastructure and hardware.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <p>"JNS-ALPHA GROUP transformed our business with their innovative tech solutions!"</p>
+                <h4>- Jane Doe, CEO of Tech Innovators</h4>
+            </div>
+            <div class="testimonial">
+                <p>"The team at JNS-ALPHA GROUP is incredibly professional and client-focused."</p>
+                <h4>- John Smith, Manager at Biz Solutions</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2>Get in Touch</h2>
+        <div class="contact-wrapper">
+            <form action="submit-form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12..." allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 JNS-ALPHA GROUP | <a href="privacy-policy.html">Privacy Policy</a></p>
+        <div class="social-links">
+            <a href="#"><img src="facebook-icon.svg" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.svg" alt="Twitter"></a>
+            <a href="#"><img src="linkedin-icon.svg" alt="LinkedIn"></a>
+        </div>
+    </footer>
+</body>
+</html>
