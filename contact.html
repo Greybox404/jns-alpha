@@ -302,23 +302,18 @@
                     <ul class="submenu">
                         <li><a href="about.html">About</a></li>
                         <li><a href="technologies.html">Technologies</a></li>
-                        
                     </ul>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <section style="
-        background-color: white;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 100%;
-        text-align: center;
-        text-decoration: underline;
-        margin-bottom: -15px;
-    ">
+    <!-- ✅ Status Message Display -->
+    <div id="status-message" style="display:none;"></div>
+
+    <section style="background-color: white; padding: 20px; border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); max-width: 100%; text-align: center;
+        text-decoration: underline; margin-bottom: -15px;">
         <h2>Contact Us Today 📞</h2>
     </section>
 
@@ -347,26 +342,27 @@
                     </div>
                 </div>
             </div>
-            <div class="contactForm">
-                <h2>Send us a Message</h2>
-                <form action="">
-                    <div class="inputBox">
-                        <input type="text" required>
-                        <span>Name</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="email" required>
-                        <span>Email</span>
-                    </div>
-                    <div class="inputBox">
-                        <textarea required></textarea>
-                        <span>Message</span>
-                    </div>
-                    <div class="inputBox">
-                        <input type="submit" value="Send">
-                    </div>
-                </form>
-            </div>
+
+            <!-- ✅ Contact Form -->
+            <form id="contactForm" class="contactForm">
+                <h2>Send a Message</h2>
+                <div class="inputBox">
+                    <input type="text" name="name" required>
+                    <span>Name</span>
+                </div>
+                <div class="inputBox">
+                    <input type="email" name="email" required>
+                    <span>Email</span>
+                </div>
+                <div class="inputBox">
+                    <textarea name="message" required></textarea>
+                    <span>Message</span>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Send">
+                </div>
+            </form>
+            
         </div>
     </section>
 
@@ -374,5 +370,47 @@
         <p>&copy; 2024 JNS | All Rights Reserved</p>
     </footer>
 
+    <!-- ✅ PHP Session Message Handler -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+        
+            const form = e.target;
+            const formData = new FormData(form);
+            const statusBox = document.getElementById("status-message");
+        
+            try {
+                const response = await fetch("sendEmail.php", {
+                    method: "POST",
+                    body: formData
+                });
+        
+                const result = await response.json(); // Expecting JSON from PHP
+        
+                statusBox.innerText = result.message;
+                statusBox.style.display = "block";
+                statusBox.style.padding = "15px";
+                statusBox.style.margin = "10px auto";
+                statusBox.style.borderRadius = "8px";
+                statusBox.style.width = "80%";
+                statusBox.style.textAlign = "center";
+                statusBox.style.fontWeight = "500";
+                statusBox.style.transition = "opacity 0.5s ease-in-out";
+                statusBox.style.backgroundColor = result.type === "success" ? "#d4edda" : "#f8d7da";
+                statusBox.style.color = result.type === "success" ? "#155724" : "#721c24";
+        
+                if (result.type === "success") form.reset();
+        
+                setTimeout(() => statusBox.style.opacity = "0", 5000);
+            } catch (error) {
+                statusBox.innerText = "Error sending message. Please try again.";
+                statusBox.style.display = "block";
+                statusBox.style.backgroundColor = "#f8d7da";
+                statusBox.style.color = "#721c24";
+            }
+        });
+        </script>
+        
 </body>
+
 </html>

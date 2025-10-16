@@ -260,10 +260,15 @@ nav .hamburger {
   flex-wrap: wrap;
 }
 
-.client-logos img {
-  width: 150px;
-  margin: 10px;
+.client img {
+  width: 150px !important;
+  height: 110px !important;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .newsletter {
   padding: 50px 0;

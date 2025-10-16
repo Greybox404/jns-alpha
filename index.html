@@ -182,7 +182,7 @@
           <img src="images/CV.png" alt="cv maker">
           <h3>CV maker</h3>
           <p>CV maker tool.</p>
-          <a href="cv.html" class="cta">Learn More</a>
+          <a href="cvmaker.html" class="cta">Learn More</a>
         </div>
 
       </div>
@@ -228,11 +228,28 @@
     <div class="container">
       <h2 data-aos="fade-up">Our Clients</h2>
       <div class="client-logos">
-        <img src="client1.png" alt="Client 1" data-aos="fade-up" data-aos-delay="100">
-        <img src="client2.png" alt="Client 2" data-aos="fade-up" data-aos-delay="200">
+  
+        <div class="client" data-aos="fade-up" data-aos-delay="100">
+          <img src="images/Alvinah.jpeg" alt="Alvinah">
+          <h3>Alvinah</h3>
+        </div>
+  
+        <div class="client" data-aos="fade-up" data-aos-delay="200">
+          <img src="images/StudyCool.png" alt="Studycool">
+          <h3>Studycool</h3>
+        </div>
+  
+        <div class="client" data-aos="fade-up" data-aos-delay="300">
+          <img src="images/TraceChain.png" alt="Tracechain">
+          <h3>Tracechain</h3>
+        </div>
+  
       </div>
     </div>
   </section>
+  
+  
+  
 
   <section class="newsletter">
     <div class="container">
@@ -248,14 +265,19 @@
     <div class="container">
       <h2 data-aos="fade-up">Ready to Transform Your Business?</h2>
       <p>Contact us today to get started!</p>
-      <form data-aos="fade-up">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" required></textarea>
+  
+      <form id="contact-form" action="sendMail.php" method="POST" data-aos="fade-up">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
         <button type="submit">Send Message</button>
       </form>
+  
+      <!-- Message output area -->
+      <div id="form-message" style="margin-top:10px; font-weight:bold; color:#fff;"></div>
     </div>
   </section>
+  
 
   <footer>
     <div class="container">
@@ -324,6 +346,7 @@
     window.addEventListener("load", function () {
       document.querySelector(".loader").style.display = "none";
     });
+    
   </script>
 </body>
 
